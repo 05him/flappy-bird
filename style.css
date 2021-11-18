@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.title {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  flex-direction: column;
+}
+
+.title h3 {
+  z-index: 10;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.hide {
+  display: none;
+}
+.bird {
+  --bird-width: 30;
+  --bird-top: -1000;
+  --bird-left: 50;
+  position: absolute;
+  width: calc(var(--bird-width) * 1px);
+  height: calc(var(--bird-width) * 1px);
+  left: calc(var(--bird-left) * 1px);
+  top: calc(var(--bird-top) * 1px);
+  background: green;
+  border-radius: 50%;
+}
+.pipe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--pipe-left) * 1px);
+  width: calc(var(--pipe-width) * 1px);
+}
+
+.pipe > .segment {
+  width: 100%;
+  background: red;
+  position: absolute;
+}
+.pipe > .top {
+  /* left: 50px; */
+  top: 0;
+  bottom: calc(var(--hole-top) * 1px);
+}
+.pipe > .bottom {
+  background: yellow;
+  bottom: 0;
+  top: calc(100vh - var(--hole-top) * 1px + var(--hole-height) * 1px);
+}
